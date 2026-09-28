@@ -19,7 +19,7 @@ const projects = [
     stack: ["Next.js", "React", "TypeScript", "Supabase", "Tailwind CSS", "shadcn/ui", "Radix UI"],
     github: "https://github.com/abdelkhalekligflam/Taskora",
     image: null,
-    video: "/taskora-demo.mp4",
+    video: "/taskora-demo-optimized.mp4",
   },
 ];
 
