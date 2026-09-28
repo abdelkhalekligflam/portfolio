@@ -44,7 +44,7 @@ export default function Home() {
     <main className="min-h-screen overflow-hidden bg-[#09090b] text-zinc-100">
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(99,102,241,0.16),transparent_30%),radial-gradient(circle_at_80%_25%,rgba(59,130,246,0.10),transparent_28%)]" />
 
-      <header className="sticky top-0 z-50 border-b border-white/5 bg-[#09090b]/80 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 scroll-smooth border-b border-white/5 bg-[#09090b]/80 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="#top" className="text-sm font-semibold tracking-[0.22em] text-white">
             AKL
@@ -167,9 +167,9 @@ export default function Home() {
 
                 <div className="relative min-h-[280px] overflow-hidden border-t border-white/10 bg-[#0d0d12] lg:border-l lg:border-t-0">
                   {project.video ? (
-                    <div className="absolute inset-5 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-2xl">
+                    <div className="absolute inset-4 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-2xl sm:inset-5">
                       <video
-                        className="h-full w-full object-cover object-left-top"
+                        className="h-full w-full object-cover object-left-top motion-reduce:hidden"
                         autoPlay
                         muted
                         loop
@@ -220,7 +220,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="skills" className="relative mx-auto max-w-6xl px-6 py-24">
+      <section id="skills" className="relative mx-auto max-w-6xl scroll-mt-28 px-6 py-24">
         <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-7 md:p-10">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">Tech stack</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">Tools I work with</h2>
@@ -234,7 +234,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="relative mx-auto grid max-w-6xl gap-10 px-6 py-28 md:grid-cols-[0.8fr_1.2fr]">
+      <section id="about" className="relative mx-auto grid max-w-6xl scroll-mt-28 gap-10 px-6 py-28 md:grid-cols-[0.8fr_1.2fr]">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">About</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">Building, learning, improving.</h2>
@@ -251,7 +251,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="experience" className="relative mx-auto max-w-6xl px-6 py-28">
+      <section id="experience" className="relative mx-auto max-w-6xl scroll-mt-28 px-6 py-28">
         <div className="mb-10">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">Experience</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">Professional journey</h2>
@@ -322,7 +322,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="relative mx-auto max-w-6xl px-6 py-28">
+      <section id="contact" className="relative mx-auto max-w-6xl scroll-mt-28 px-6 py-28">
         <div className="rounded-[2rem] border border-indigo-400/20 bg-gradient-to-br from-indigo-500/10 via-white/[0.03] to-transparent p-8 md:p-12">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">Contact</p>
           <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-white md:text-6xl">
