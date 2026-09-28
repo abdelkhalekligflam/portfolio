@@ -53,6 +53,7 @@ export default function Home() {
             <a className="transition hover:text-white" href="#projects">Projects</a>
             <a className="transition hover:text-white" href="#skills">Skills</a>
             <a className="transition hover:text-white" href="#about">About</a>
+            <a className="transition hover:text-white" href="#experience">Experience</a>
             <a className="transition hover:text-white" href="#contact">Contact</a>
           </div>
           <a
@@ -64,13 +65,20 @@ export default function Home() {
             GitHub
           </a>
         </nav>
+        <div className="mx-auto flex max-w-6xl gap-5 overflow-x-auto px-6 pb-3 text-xs text-zinc-500 md:hidden">
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
       </header>
 
       <section id="top" className="relative mx-auto flex min-h-[86vh] max-w-6xl items-center px-6 py-24">
         <div className="max-w-4xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-400/20 bg-indigo-500/10 px-3 py-1.5 text-xs font-medium text-indigo-300">
             <span className="h-1.5 w-1.5 rounded-full bg-indigo-400" />
-            Available for opportunities
+            Open to front-end opportunities
           </div>
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-zinc-500">
             Front-End Developer
@@ -93,10 +101,17 @@ export default function Home() {
               View my work
             </a>
             <a
-              href="#contact"
+              href="mailto:akhaelk@gmail.com"
               className="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-zinc-200 transition hover:bg-white/10 hover:text-white"
             >
               Contact me
+            </a>
+            <a
+              href="/Abdelkhalek-Ligflam-CV.pdf"
+              download
+              className="rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-zinc-400 transition hover:border-indigo-400/30 hover:text-white"
+            >
+              Download CV
             </a>
           </div>
         </div>
@@ -236,7 +251,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-6xl px-6 py-28">
+      <section id="experience" className="relative mx-auto max-w-6xl px-6 py-28">
         <div className="mb-10">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">Experience</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">Professional journey</h2>
@@ -315,15 +330,22 @@ export default function Home() {
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-400">
             I&apos;m open to front-end opportunities, collaborations, and projects where I can contribute and keep growing.
+            The easiest way to reach me is by email or LinkedIn.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="mailto:akhaelk@gmail.com"
+              className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200"
+            >
+              Email me
+            </a>
             <a
               href="https://github.com/abdelkhalekligflam"
               target="_blank"
               rel="noreferrer"
-              className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200"
+              className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-zinc-200 transition hover:bg-white/10"
             >
-              GitHub profile
+              GitHub
             </a>
             <a
               href="https://www.linkedin.com/in/abdelkhalek-ligflam"
