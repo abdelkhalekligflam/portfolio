@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const projects = [
   {
     name: "Rasid",
@@ -6,6 +8,7 @@ const projects = [
       "A personal finance platform for tracking balances, income, expenses, budgets, savings goals, alerts, categories, and recent transactions.",
     stack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "TanStack Query", "Zod", "Zustand", "Recharts"],
     github: "https://github.com/abdelkhalekligflam/Rasid",
+    image: "/rasid-dashboard.png.jpg",
   },
   {
     name: "Taskora",
@@ -14,6 +17,7 @@ const projects = [
       "A modern productivity application built with Next.js and Supabase, focused on a clean experience, reusable UI, and scalable app structure.",
     stack: ["Next.js", "React", "TypeScript", "Supabase", "Tailwind CSS", "shadcn/ui", "Radix UI"],
     github: "https://github.com/abdelkhalekligflam/Taskora",
+    image: null,
   },
 ];
 
@@ -140,25 +144,38 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="relative min-h-[280px] border-t border-white/10 bg-[#0d0d12] lg:border-l lg:border-t-0">
-                  <div className="absolute inset-5 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-indigo-500/15 via-zinc-900 to-black p-5 shadow-2xl">
-                    <div className="mb-5 flex items-center gap-1.5">
-                      <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
+                <div className="relative min-h-[280px] overflow-hidden border-t border-white/10 bg-[#0d0d12] lg:border-l lg:border-t-0">
+                  {project.image ? (
+                    <div className="absolute inset-5 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-2xl">
+                      <Image
+                        src={project.image}
+                        alt={`${project.name} application dashboard`}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 45vw"
+                        className="object-cover object-left-top transition duration-700 group-hover:scale-[1.025]"
+                      />
+                      <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/5" />
                     </div>
-                    <div className="grid h-[calc(100%-28px)] grid-cols-[72px_1fr] gap-4">
-                      <div className="rounded-xl border border-white/5 bg-white/[0.03]" />
-                      <div className="grid grid-rows-[1fr_1.25fr] gap-4">
-                        <div className="grid grid-cols-3 gap-3">
-                          <div className="rounded-xl border border-white/5 bg-white/[0.04]" />
-                          <div className="rounded-xl border border-indigo-400/10 bg-indigo-500/[0.08]" />
-                          <div className="rounded-xl border border-white/5 bg-white/[0.04]" />
+                  ) : (
+                    <div className="absolute inset-5 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-indigo-500/15 via-zinc-900 to-black p-5 shadow-2xl">
+                      <div className="mb-5 flex items-center gap-1.5">
+                        <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
+                      </div>
+                      <div className="grid h-[calc(100%-28px)] grid-cols-[72px_1fr] gap-4">
+                        <div className="rounded-xl border border-white/5 bg-white/[0.03]" />
+                        <div className="grid grid-rows-[1fr_1.25fr] gap-4">
+                          <div className="grid grid-cols-3 gap-3">
+                            <div className="rounded-xl border border-white/5 bg-white/[0.04]" />
+                            <div className="rounded-xl border border-indigo-400/10 bg-indigo-500/[0.08]" />
+                            <div className="rounded-xl border border-white/5 bg-white/[0.04]" />
+                          </div>
+                          <div className="rounded-xl border border-white/5 bg-[linear-gradient(180deg,rgba(99,102,241,0.08),rgba(255,255,255,0.02))]" />
                         </div>
-                        <div className="rounded-xl border border-white/5 bg-[linear-gradient(180deg,rgba(99,102,241,0.08),rgba(255,255,255,0.02))]" />
                       </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             </article>
