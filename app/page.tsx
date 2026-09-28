@@ -24,15 +24,19 @@ const projects = [
 ];
 
 const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
   "React",
   "Next.js",
-  "TypeScript",
-  "JavaScript",
   "Tailwind CSS",
-  "Supabase",
+  "Zustand",
   "Git",
   "GitHub",
-  "Responsive Design",
+  "shadcn/ui",
+  "Chakra UI",
+  "Supabase",
 ];
 
 export default function Home() {
@@ -222,24 +226,79 @@ export default function Home() {
         </div>
         <div className="space-y-6 text-lg leading-8 text-zinc-400">
           <p>
-            I&apos;m a front-end developer focused on creating clean, responsive, and maintainable web products.
-            My current work centers on React, Next.js, TypeScript, Tailwind CSS, and Supabase.
+            I&apos;m a Front-End Developer with an academic background in Economics and Management. This combination
+            helps me approach web projects with both analytical rigor and a practical product perspective.
           </p>
           <p>
-            I enjoy turning product ideas into polished interfaces and continuously improving both my technical
-            foundations and the quality of the experiences I build.
+            I build responsive interfaces with React, Next.js, TypeScript and Tailwind CSS, with a focus on
+            problem-solving, teamwork, maintainable UI, and continuously improving the user experience.
           </p>
         </div>
       </section>
 
+      <section className="relative mx-auto max-w-6xl px-6 py-28">
+        <div className="mb-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">Experience</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">Professional journey</h2>
+        </div>
+        <div className="grid gap-5 md:grid-cols-2">
+          <article className="rounded-3xl border border-white/10 bg-white/[0.03] p-7">
+            <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">03/2026 — 06/2026</p>
+            <h3 className="mt-5 text-xl font-semibold text-white">Front-End Developer Intern</h3>
+            <p className="mt-1 text-sm font-medium text-indigo-300">IMFA Solution</p>
+            <p className="mt-5 text-sm leading-7 text-zinc-400">
+              Developed the front end of LFAHEM, a Moroccan AI conversational assistant for administrative procedures
+              and tourism with native Darija support. Built category navigation with HeroUI v3, Iconify/Gravity UI
+              and Zustand, and collaborated with the product team on UX and chatbot navigation.
+            </p>
+          </article>
+          <article className="rounded-3xl border border-white/10 bg-white/[0.03] p-7">
+            <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">10/2025 — 02/2026</p>
+            <h3 className="mt-5 text-xl font-semibold text-white">Front-End Developer Intern</h3>
+            <p className="mt-1 text-sm font-medium text-indigo-300">Algorium Academy</p>
+            <p className="mt-5 text-sm leading-7 text-zinc-400">
+              Developed responsive web interfaces with HTML, CSS and JavaScript, created interactive components
+              with React.js, and collaborated on team projects while applying front-end development best practices.
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section className="relative mx-auto max-w-6xl px-6 py-24">
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="mb-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">Education</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">Education & training</h2>
+        </div>
+        <div className="grid gap-5 md:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">10/2025 · Ouarzazate</p>
+            <h3 className="mt-4 text-lg font-semibold text-white">Frontend — Web Development Bootcamp</h3>
+            <p className="mt-2 text-sm text-zinc-500">JobInTech</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">09/2019 — 10/2020 · Agadir</p>
+            <h3 className="mt-4 text-lg font-semibold text-white">Bachelor&apos;s Degree in Economics & Management</h3>
+            <p className="mt-2 text-sm text-zinc-500">Ibn Zohr University · FSJES Agadir</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative mx-auto max-w-6xl px-6 py-24">
+        <div className="mb-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">Credentials</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">Certifications</h2>
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            ["React Front-End Developer", "Algorium Academy"],
-            ["React Foundations", "Vercel"],
-            ["Next.js Fundamentals", "Vercel"],
+            ["HTML Course", "Codecademy · 10/2025"],
+            ["CSS Course", "Codecademy · 10/2025"],
+            ["JavaScript Course", "Codecademy · 11/2025"],
+            ["TypeScript Course", "Codecademy · 11/2025"],
+            ["Soft Skills Certificate", "Algorium Academy / JobInTech · 11/2025"],
+            ["React Course", "Codecademy · 12/2025"],
+            ["Next.js Course", "Codecademy · 12/2025"],
           ].map(([title, issuer]) => (
-            <div key={title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div key={title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-indigo-400/30 hover:bg-white/[0.05]">
               <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">Certification</p>
               <h3 className="mt-5 text-lg font-semibold text-white">{title}</h3>
               <p className="mt-2 text-sm text-zinc-500">{issuer}</p>
