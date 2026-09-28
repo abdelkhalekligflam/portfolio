@@ -267,7 +267,7 @@ export default function Home() {
               GitHub profile
             </a>
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/abdelkhalek-ligflam"
               target="_blank"
               rel="noreferrer"
               className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-zinc-200 transition hover:bg-white/10"
