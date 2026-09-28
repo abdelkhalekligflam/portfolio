@@ -9,6 +9,7 @@ const projects = [
     stack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "TanStack Query", "Zod", "Zustand", "Recharts"],
     github: "https://github.com/abdelkhalekligflam/Rasid",
     image: "/rasid-dashboard.png.jpg",
+    video: "/rasid-demo.mp4",
   },
   {
     name: "Taskora",
@@ -18,6 +19,7 @@ const projects = [
     stack: ["Next.js", "React", "TypeScript", "Supabase", "Tailwind CSS", "shadcn/ui", "Radix UI"],
     github: "https://github.com/abdelkhalekligflam/Taskora",
     image: null,
+    video: null,
   },
 ];
 
@@ -145,7 +147,23 @@ export default function Home() {
                 </div>
 
                 <div className="relative min-h-[280px] overflow-hidden border-t border-white/10 bg-[#0d0d12] lg:border-l lg:border-t-0">
-                  {project.image ? (
+                  {project.video ? (
+                    <div className="absolute inset-5 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-2xl">
+                      <video
+                        className="h-full w-full object-cover object-left-top"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                        poster={project.image ?? undefined}
+                        aria-label={`${project.name} application demo`}
+                      >
+                        <source src={project.video} type="video/mp4" />
+                      </video>
+                      <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/5" />
+                    </div>
+                  ) : project.image ? (
                     <div className="absolute inset-5 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-2xl">
                       <Image
                         src={project.image}
