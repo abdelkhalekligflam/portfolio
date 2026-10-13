@@ -1,6 +1,6 @@
 import Image from "next/image";
-import CopyEmail from "./components/copy-email";
 import ThemeToggle from "./components/theme-toggle";
+import CopyEmail from "./components/copy-email";
 
 const projects = [
   {
@@ -84,314 +84,58 @@ const skills = [
   "Supabase",
 ];
 
+
+const experience = [
+  { date:"Mar — Jun 2026", role:"Front-End Developer Intern", company:"IMFA Solution", detail:"Built front-end experiences for LFAHEM, an AI assistant for Moroccan administrative procedures and tourism, with native Darija support." },
+  { date:"Oct 2025 — Feb 2026", role:"Front-End Developer Intern", company:"Algorium Academy", detail:"Developed responsive interfaces and React components while collaborating on front-end projects and UI best practices." }
+];
+const credentials = ["HTML","CSS","JavaScript","TypeScript","Soft Skills","React","Next.js"];
+
 export default function Home() {
-  return (
-    <main className="portfolio-shell min-h-screen overflow-hidden bg-[#09090b] text-zinc-100">
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(99,102,241,0.16),transparent_30%),radial-gradient(circle_at_80%_25%,rgba(59,130,246,0.10),transparent_28%)]" />
+  return <main id="top" className="site">
+    <header className="site-header">
+      <nav className="nav-shell" aria-label="Main navigation">
+        <a href="#top" className="wordmark"><span className="brand-symbol">a.</span><span>Abdelkhalek <span className="brand-muted">Ligflam</span></span></a>
+        <div className="nav-links"><a href="#work">Work</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
+        <div className="nav-actions"><ThemeToggle/><a className="nav-cta" href="mailto:akhaelk@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a></div>
+      </nav>
+    </header>
 
-      <header className="portfolio-header sticky top-0 z-50 scroll-smooth border-b border-white/5 bg-[#09090b]/80 backdrop-blur-xl">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#top" className="text-sm font-semibold tracking-[0.22em] text-white">
-            AKL
-          </a>
-          <div className="hidden items-center gap-7 text-sm text-zinc-400 md:flex">
-            <a className="transition hover:text-white" href="#projects">Projects</a>
-            <a className="transition hover:text-white" href="#all-projects">All Projects</a>
-            <a className="transition hover:text-white" href="#skills">Skills</a>
-            <a className="transition hover:text-white" href="#about">About</a>
-            <a className="transition hover:text-white" href="#experience">Experience</a>
-            <a className="transition hover:text-white" href="#contact">Contact</a>
-          </div>
-          <div className="flex items-center gap-2"><ThemeToggle /><a
-            href="https://github.com/abdelkhalekligflam"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-zinc-200 transition hover:border-indigo-400/40 hover:bg-indigo-500/10 hover:text-white"
-          >
-            GitHub
-          </a></div>
-        </nav>
-        <div className="mx-auto flex max-w-6xl gap-5 overflow-x-auto px-6 pb-3 text-xs text-zinc-500 md:hidden">
-          <a href="#projects">Projects</a>
-          <a href="#all-projects">All Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
+    <div className="layout">
+      <section className="hero" aria-labelledby="hero-heading">
+        <div className="hero-copy">
+          <p className="eyebrow"><span className="availability-dot"/> AVAILABLE FOR OPPORTUNITIES <span className="eyebrow-divider">/</span> OUARZAZATE, MOROCCO</p>
+          <h1 id="hero-heading">Building digital<br/><span className="hero-accent">experiences</span><br/>that feel right<span className="hero-period">.</span></h1>
+          <p className="hero-description">I’m Abdelkhalek, a front-end developer crafting thoughtful interfaces and real-world products with React, Next.js and TypeScript.</p>
+          <div className="hero-actions"><a className="button-primary" href="#work">Explore selected work <span>↗</span></a><a className="button-secondary" href="/Abdelkhalek-Ligflam-CV.pdf" download>Download résumé <span>↓</span></a></div>
+          <div className="hero-foot"><span>FRONT-END DEVELOPMENT</span><span>DESIGN-MINDED ENGINEERING</span><span>2026 ©</span></div>
         </div>
-      </header>
-
-      <section id="top" className="relative mx-auto flex min-h-[75vh] max-w-6xl items-center px-6 py-24">
-        <div className="max-w-4xl">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-400/20 bg-indigo-500/10 px-3 py-1.5 text-xs font-medium text-indigo-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-indigo-400" />
-            Open to front-end and remote opportunities
-          </div>
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-zinc-500">
-            Front-End Developer
-          </p>
-          <h1 className="max-w-4xl text-5xl font-semibold leading-[0.98] tracking-[-0.065em] text-white sm:text-6xl md:text-8xl">
-            Abdelkhalek
-            <span className="block bg-gradient-to-r from-white via-zinc-300 to-indigo-400 bg-clip-text text-transparent">
-              Ligflam.
-            </span>
-          </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl">
-            I build modern, responsive web applications with React, Next.js and TypeScript,
-            with a focus on clean interfaces, performance, and practical user experiences.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-3">
-            <a
-              href="#projects"
-              className="rounded-full bg-indigo-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-indigo-400"
-            >
-              Explore projects
-            </a>
-            <a
-              href="mailto:akhaelk@gmail.com"
-              className="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-zinc-200 transition hover:bg-white/10 hover:text-white"
-            >
-              Contact me
-            </a>
-            <a
-              href="/Abdelkhalek-Ligflam-CV.pdf"
-              download
-              className="rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-zinc-400 transition hover:border-indigo-400/30 hover:text-white"
-            >
-              Download CV
-            </a>
-          </div>
-        </div>
+        <div className="hero-art" aria-hidden="true"><div className="hero-grid"/><div className="orb orb-one"/><div className="orb orb-two"/><div className="art-frame"><div className="art-line"/><div className="art-line short"/><div className="art-card"><span className="art-dot"/><span className="art-code">&lt; build /&gt;</span><span className="art-arrow">↗</span></div></div><span className="art-caption">DESIGN × CODE</span></div>
       </section>
 
-      <section id="projects" className="relative mx-auto max-w-6xl px-6 py-28">
-        <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">Selected work</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">Featured projects</h2>
-          </div>
-          <p className="max-w-md text-sm leading-6 text-zinc-500">
-            Real applications built around useful product ideas, scalable UI, and modern web technologies.
-          </p>
-        </div>
-
-        <div className="grid gap-7">
-          {projects.map((project, index) => (
-            <article key={project.name} className="featured-card group overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.035] transition duration-300 hover:-translate-y-1 hover:border-indigo-400/30">
-              <div className="grid items-stretch lg:grid-cols-2">
-                <div className="flex min-w-0 flex-col justify-between gap-7 p-6 sm:p-9 lg:p-10">
-                  <div>
-                    <div className="mb-6 flex items-center justify-between">
-                      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">0{index + 1} / {project.type}</span>
-                      <span aria-hidden="true" className="text-indigo-400">↗</span>
-                    </div>
-                    <h3 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">{project.name}</h3>
-                    <p className="mt-4 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base">{project.description}</p>
-                    <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                      <div className="project-detail rounded-2xl border border-white/10 bg-black/20 p-4">
-                        <p className="text-xs font-semibold uppercase tracking-wider text-indigo-300">Challenge</p>
-                        <p className="mt-2 text-sm leading-6 text-zinc-400">{project.challenge}</p>
-                      </div>
-                      <div className="project-detail rounded-2xl border border-white/10 bg-black/20 p-4">
-                        <p className="text-xs font-semibold uppercase tracking-wider text-indigo-300">Solution</p>
-                        <p className="mt-2 text-sm leading-6 text-zinc-400">{project.solution}</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex flex-wrap gap-2">
-                      {project.stack.map((item) => <span key={item} className="rounded-full border border-white/10 px-3 py-1 text-[11px] text-zinc-400">{item}</span>)}
-                    </div>
-                    <div className="mt-6 flex flex-wrap items-center gap-5">
-                      {"live" in project && project.live && <a href={project.live} target="_blank" rel="noreferrer" className="text-sm font-semibold text-indigo-300 hover:underline">Live demo ↗</a>}
-                      <a href={project.github} target="_blank" rel="noreferrer" className="text-sm font-semibold text-white hover:underline">Source code ↗</a>
-                    </div>
-                  </div>
-                </div>
-                <div className="project-preview flex min-w-0 items-center justify-center border-t border-white/10 p-3 sm:p-5 lg:border-l lg:border-t-0">
-                  <div className="project-browser w-full overflow-hidden rounded-xl border border-white/10 shadow-2xl ring-1 ring-indigo-500/10">
-                    <div className="browser-toolbar flex h-9 items-center gap-1.5 border-b border-white/10 px-4">
-                      <span className="h-2 w-2 rounded-full bg-[#fb7185]/70" /><span className="h-2 w-2 rounded-full bg-[#fbbf24]/70" /><span className="h-2 w-2 rounded-full bg-[#34d399]/70" />
-                      <span className="ml-auto text-[10px] font-medium tracking-wider opacity-60">LIVE PREVIEW</span>
-                    </div>
-                    {project.video ? <video className="block aspect-[960/472] w-full bg-zinc-950 object-contain" autoPlay muted loop playsInline controls preload="auto" poster={project.image ?? undefined} aria-label={`${project.name} application demo`}><source src={project.video} type="video/mp4" /></video> : project.image ? <div className="relative aspect-video"><Image src={project.image} alt={`${project.name} dashboard`} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-top" /></div> : <div className="aspect-video bg-zinc-900" />}
-                  </div>
-                </div>
+      <section id="work" className="section work-section">
+        <div className="section-heading"><div><p className="eyebrow">01 / THE WORK</p><h2>Selected <em>projects.</em></h2></div><p className="section-intro">A collection of products I’ve built, from personal finance to productivity and business tools.</p></div>
+        <div className="featured-grid">
+          {projects.map((project,index)=><article className="feature-card" key={project.name}>
+            <div className="feature-media">
+              <div className="browser">
+                <div className="browser-top"><div className="browser-dots"><i/><i/><i/></div><span>{project.name.toLowerCase()} / product preview</span><span className="browser-expand">↗</span></div>
+                {project.video ? <video key={project.video} className="feature-video" autoPlay muted loop playsInline preload="metadata" controls poster={project.image ?? undefined} aria-label={project.name+" application demonstration"}><source src={project.video} type="video/mp4"/>Your browser does not support video.</video> : project.image ? <div className="feature-image"><Image src={project.image} fill alt={project.name+" dashboard"} sizes="(max-width: 900px) 100vw, 50vw" className="object-contain"/></div> : null}
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-
-      <section id="all-projects" className="relative mx-auto max-w-6xl scroll-mt-28 px-6 pb-28">
-        <div className="mb-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">More work</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">All projects</h2>
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-500">Selected additional work across education and e-commerce.</p>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {additionalProjects.map((project) => (
-            <article key={project.name} className="group flex min-h-64 flex-col rounded-3xl border border-white/10 bg-white/[0.035] p-6 transition hover:-translate-y-1 hover:border-indigo-400/30 hover:bg-white/[0.06]">
-              <span className="w-fit rounded-full border border-indigo-400/20 bg-indigo-500/10 px-3 py-1 text-xs text-indigo-300">{project.category}</span>
-              <h3 className="mt-5 text-2xl font-semibold text-white">{project.name}</h3>
-              <p className="mt-1 text-xs text-zinc-500">{project.type}</p>
-              <p className="mt-4 flex-1 text-sm leading-6 text-zinc-400">{project.description}</p>
-              <div className="mt-6 flex flex-wrap gap-4 text-sm font-medium">
-                {project.live && <a href={project.live} target="_blank" rel="noreferrer" className="text-indigo-300 hover:text-white">Live demo ↗</a>}
-                <a href={project.github} target="_blank" rel="noreferrer" className="text-zinc-300 hover:text-white">GitHub ↗</a>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="skills" className="relative mx-auto max-w-6xl scroll-mt-28 px-6 py-24">
-        <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-7 md:p-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">Tech stack</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">Tools I work with</h2>
-          <div className="mt-8 flex flex-wrap gap-3">
-            {skills.map((skill) => (
-              <span key={skill} className="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-zinc-300 transition hover:border-indigo-400/40">
-                <span aria-hidden="true" className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-500/10 font-semibold text-indigo-300">{skill.slice(0,2).toUpperCase()}</span>{skill}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="about" className="relative mx-auto grid max-w-6xl scroll-mt-28 gap-10 px-6 py-28 md:grid-cols-[0.8fr_1.2fr]">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">About</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">Building, learning, improving.</h2>
-        </div>
-        <div className="space-y-6 text-lg leading-8 text-zinc-400">
-          <p>
-            I&apos;m a Front-End Developer with an academic background in Economics and Management. This combination
-            helps me approach web projects with both analytical rigor and a practical product perspective.
-          </p>
-          <p>
-            I build responsive interfaces with React, Next.js, TypeScript and Tailwind CSS, with a focus on
-            problem-solving, teamwork, maintainable UI, and continuously improving the user experience.
-          </p>
-        </div>
-      </section>
-
-      <section id="experience" className="relative mx-auto max-w-6xl scroll-mt-28 px-6 py-28">
-        <div className="mb-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">Experience</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">Professional journey</h2>
-        </div>
-        <div className="grid gap-5 border-l border-indigo-400/30 pl-5 md:grid-cols-2">
-          <article className="rounded-3xl border border-white/10 bg-white/[0.03] p-7">
-            <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">03/2026 — 06/2026</p>
-            <h3 className="mt-5 text-xl font-semibold text-white">Front-End Developer Intern</h3>
-            <p className="mt-1 text-sm font-medium text-indigo-300">IMFA Solution</p>
-            <p className="mt-5 text-sm leading-7 text-zinc-400">
-              Developed the front end of LFAHEM, a Moroccan AI conversational assistant for administrative procedures
-              and tourism with native Darija support. Built category navigation with HeroUI v3, Iconify/Gravity UI
-              and Zustand, and collaborated with the product team on UX and chatbot navigation.
-            </p>
-          </article>
-          <article className="rounded-3xl border border-white/10 bg-white/[0.03] p-7">
-            <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">10/2025 — 02/2026</p>
-            <h3 className="mt-5 text-xl font-semibold text-white">Front-End Developer Intern</h3>
-            <p className="mt-1 text-sm font-medium text-indigo-300">Algorium Academy</p>
-            <p className="mt-5 text-sm leading-7 text-zinc-400">
-              Developed responsive web interfaces with HTML, CSS and JavaScript, created interactive components
-              with React.js, and collaborated on team projects while applying front-end development best practices.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section className="relative mx-auto max-w-6xl px-6 py-24">
-        <div className="mb-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">Education</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">Education & training</h2>
-        </div>
-        <div className="grid gap-5 md:grid-cols-2">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-            <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">10/2025 · Ouarzazate</p>
-            <h3 className="mt-4 text-lg font-semibold text-white">Frontend — Web Development Bootcamp</h3>
-            <p className="mt-2 text-sm text-zinc-500">JobInTech</p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-            <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">09/2019 — 10/2020 · Agadir</p>
-            <h3 className="mt-4 text-lg font-semibold text-white">Bachelor&apos;s Degree in Economics & Management</h3>
-            <p className="mt-2 text-sm text-zinc-500">Ibn Zohr University · FSJES Agadir</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative mx-auto max-w-6xl px-6 py-24">
-        <div className="mb-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">Credentials</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">Certifications</h2>
-        </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            ["HTML Course", "Codecademy · 10/2025"],
-            ["CSS Course", "Codecademy · 10/2025"],
-            ["JavaScript Course", "Codecademy · 11/2025"],
-            ["TypeScript Course", "Codecademy · 11/2025"],
-            ["Soft Skills Certificate", "Algorium Academy / JobInTech · 11/2025"],
-            ["React Course", "Codecademy · 12/2025"],
-            ["Next.js Course", "Codecademy · 12/2025"],
-          ].map(([title, issuer]) => (
-            <div key={title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-indigo-400/30 hover:bg-white/[0.05]">
-              <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">Certification</p>
-              <h3 className="mt-5 text-lg font-semibold text-white">{title}</h3>
-              <p className="mt-2 text-sm text-zinc-500">{issuer}</p>
             </div>
-          ))}
+            <div className="feature-content"><div className="feature-meta"><span>0{index+1} / FEATURED PROJECT</span><span>{project.type}</span></div><h3>{project.name}<span className="title-arrow">↗</span></h3><p className="feature-description">{project.description}</p><div className="feature-insight"><div><strong>The challenge</strong><span>{project.challenge}</span></div><div><strong>The solution</strong><span>{project.solution}</span></div></div><div className="tag-list">{project.stack.map(tech=><span key={tech}>{tech}</span>)}</div><div className="feature-links">{"live" in project && project.live && <a href={project.live} target="_blank" rel="noreferrer">Visit website ↗</a>}<a href={project.github} target="_blank" rel="noreferrer">View source code ↗</a></div></div>
+          </article>)}
         </div>
       </section>
 
-      <section id="contact" className="relative mx-auto max-w-6xl scroll-mt-28 px-6 py-28">
-        <div className="rounded-[2rem] border border-indigo-400/20 bg-gradient-to-br from-indigo-500/10 via-white/[0.03] to-transparent p-8 md:p-12">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">Contact</p>
-          <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-white md:text-6xl">
-            Let&apos;s build something useful.
-          </h2>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-400">
-            I&apos;m open to front-end opportunities, collaborations, and projects where I can contribute and keep growing.
-            The easiest way to reach me is by email or LinkedIn.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <CopyEmail />
-            <a
-              href="mailto:akhaelk@gmail.com"
-              className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200"
-            >
-              Email me
-            </a>
-            <a
-              href="https://github.com/abdelkhalekligflam"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-zinc-200 transition hover:bg-white/10"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/abdelkhalek-ligflam"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-zinc-200 transition hover:bg-white/10"
-            >
-              LinkedIn
-            </a>
-          </div>
-        </div>
-      </section>
+      <section className="section more-section" id="all-projects"><div className="section-heading"><div><p className="eyebrow">02 / EXPLORATIONS</p><h2>More <em>things I’ve built.</em></h2></div></div><div className="more-grid">{additionalProjects.map(project=><article className="more-card" key={project.name}><div className="more-top"><span>{project.category}</span><span>↗</span></div><h3>{project.name}</h3><p className="more-type">{project.type}</p><p>{project.description}</p><div className="more-links">{project.live&&<a href={project.live} target="_blank" rel="noreferrer">Live ↗</a>}<a href={project.github} target="_blank" rel="noreferrer">GitHub ↗</a></div></article>)}</div></section>
 
-      <footer className="relative border-t border-white/5">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-sm text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 Abdelkhalek Ligflam</p>
-          <p>Built with Next.js & Tailwind CSS</p>
-        </div>
-      </footer>
-    </main>
-  );
+      <section className="section about-section" id="about"><div className="section-heading"><div><p className="eyebrow">03 / A LITTLE ABOUT ME</p><h2>Curiosity meets <em>craft.</em></h2></div></div><div className="about-grid"><div className="about-statement">I like making complex things feel <span>simple.</span></div><div className="about-body"><p>I'm a front-end developer with a background in Economics and Management. I bring analytical thinking and a product mindset to every interface I build.</p><p>My focus is on responsive, accessible web experiences using React, Next.js, TypeScript and thoughtful design systems.</p><a href="mailto:akhaelk@gmail.com" className="inline-link">More about working together ↗</a></div></div><div className="skills-wrap" id="skills"><p className="eyebrow">TOOLS & TECHNOLOGIES</p><div className="skill-list">{skills.map(skill=><span key={skill}>{skill}</span>)}</div></div></section>
+
+      <section className="section journey-section" id="experience"><div className="section-heading"><div><p className="eyebrow">04 / THE JOURNEY</p><h2>Experience & <em>learning.</em></h2></div></div><div className="timeline">{experience.map(item=><article className="timeline-row" key={item.company}><span className="timeline-date">{item.date}</span><div><h3>{item.role}</h3><p className="timeline-company">{item.company}</p><p>{item.detail}</p></div><span className="timeline-icon">↗</span></article>)}</div><div className="education-grid"><div><p className="eyebrow">EDUCATION</p><h3>Frontend Web Development Bootcamp</h3><p>JobInTech · Ouarzazate · 2025</p></div><div><p className="eyebrow">EDUCATION</p><h3>Bachelor’s Degree in Economics & Management</h3><p>Ibn Zohr University · FSJES Agadir</p></div></div><div className="certifications"><p className="eyebrow">CERTIFICATIONS</p><div>{credentials.map(item=><span key={item}>{item} ↗</span>)}</div></div></section>
+
+      <section className="contact-section" id="contact"><p className="eyebrow">05 / GET IN TOUCH</p><h2>Have something<br/><em>in mind?</em></h2><p>I'm open to front-end opportunities, collaborations and ambitious projects. Let's make something great together.</p><div className="contact-actions"><a className="button-primary" href="mailto:akhaelk@gmail.com">Start a conversation ↗</a><CopyEmail/></div><div className="contact-socials"><a href="https://github.com/abdelkhalekligflam" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/abdelkhalek-ligflam" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="/Abdelkhalek-Ligflam-CV.pdf" download>Résumé ↓</a></div></section>
+      <footer className="site-footer"><span>© 2026 Abdelkhalek Ligflam</span><span>Made with intention, built with Next.js.</span><a href="#top">Back to top ↑</a></footer>
+    </div>
+  </main>;
 }
