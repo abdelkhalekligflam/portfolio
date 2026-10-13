@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CopyEmail from "./components/copy-email";
 
 const projects = [
   {
@@ -403,6 +404,7 @@ export default function Home() {
             The easiest way to reach me is by email or LinkedIn.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
+            <CopyEmail />
             <a
               href="mailto:akhaelk@gmail.com"
               className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200"
