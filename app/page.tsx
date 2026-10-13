@@ -213,11 +213,11 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="relative min-h-[280px] overflow-hidden border-t border-white/10 bg-[#0d0d12] lg:border-l lg:border-t-0">
+                <div className="relative flex min-h-[240px] items-center overflow-hidden border-t border-white/10 bg-[#0d0d12] p-4 sm:p-5 lg:border-l lg:border-t-0">
                   {project.video ? (
-                    <div className="absolute inset-4 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-2xl sm:inset-5">
+                    <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-2xl">
                       <video
-                        className="h-full w-full object-contain bg-black"
+                        className="block h-auto w-full"
                         autoPlay
                         muted
                         loop
