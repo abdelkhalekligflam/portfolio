@@ -217,7 +217,7 @@ export default function Home() {
                   {project.video ? (
                     <div className="absolute inset-4 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-2xl sm:inset-5">
                       <video
-                        className="h-full w-full object-cover object-left-top "
+                        className="h-full w-full object-contain bg-black"
                         autoPlay
                         muted
                         loop
