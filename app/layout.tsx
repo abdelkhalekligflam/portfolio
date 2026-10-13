@@ -32,11 +32,12 @@ export const metadata: Metadata = {
     description: "Front-End Developer building modern, responsive web applications.",
   },
   robots: { index: true, follow: true },
+  applicationName: "Abdelkhalek Ligflam Portfolio",
 };
 
 export const viewport: Viewport = {
   themeColor: "#09090b",
-  colorScheme: "dark",
+  colorScheme: "light dark",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
