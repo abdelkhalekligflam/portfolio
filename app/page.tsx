@@ -20,7 +20,7 @@ const projects = [
     github: "https://github.com/abdelkhalekligflam/Taskora",
     image: null,
     video: "/taskora-demo-optimized.mp4",
-  },,
+  },
   {
     name: "Atelier",
     type: "Inventory & Repairs SaaS",
