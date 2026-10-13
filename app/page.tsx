@@ -92,7 +92,7 @@ const experience = [
 const credentials = ["HTML","CSS","JavaScript","TypeScript","Soft Skills","React","Next.js"];
 
 export default function Home() {
-  return <main id="top" className="site">
+  return <main id="top" className="site"><a className="skip-link" href="#work">Skip to projects</a>
     <header className="site-header">
       <nav className="nav-shell" aria-label="Main navigation">
         <a href="#top" className="wordmark"><span className="brand-symbol">a.</span><span>Abdelkhalek <span className="brand-muted">Ligflam</span></span></a>
@@ -119,8 +119,8 @@ export default function Home() {
           {projects.map((project,index)=><article className="feature-card" key={project.name}>
             <div className="feature-media">
               <div className="browser">
-                <div className="browser-top"><div className="browser-dots"><i/><i/><i/></div><span>{project.name.toLowerCase()} / product preview</span><span className="browser-expand">↗</span></div>
-                {project.video ? <video key={project.video} className="feature-video" autoPlay muted loop playsInline preload="metadata" controls poster={project.image ?? undefined} aria-label={project.name+" application demonstration"}><source src={project.video} type="video/mp4"/>Your browser does not support video.</video> : project.image ? <div className="feature-image"><Image src={project.image} fill alt={project.name+" dashboard"} sizes="(max-width: 900px) 100vw, 50vw" className="object-contain"/></div> : null}
+                <div className="browser-top"><div className="browser-dots"><i/><i/><i/></div><span>{project.name.toLowerCase()} / product preview</span><span className="browser-expand" aria-hidden="true">↗</span></div>
+                {project.video ? <video key={project.video} className="feature-video" autoPlay muted loop playsInline preload="auto" controls poster={project.image ?? undefined} aria-label={project.name+" application demonstration"}><source src={project.video} type="video/mp4"/>Your browser does not support video.</video> : project.image ? <div className="feature-image"><Image src={project.image} fill alt={project.name+" dashboard"} sizes="(max-width: 900px) 100vw, 50vw" className="object-contain"/></div> : null}
               </div>
             </div>
             <div className="feature-content"><div className="feature-meta"><span>0{index+1} / FEATURED PROJECT</span><span>{project.type}</span></div><h3>{project.name}<span className="title-arrow">↗</span></h3><p className="feature-description">{project.description}</p><div className="feature-insight"><div><strong>The challenge</strong><span>{project.challenge}</span></div><div><strong>The solution</strong><span>{project.solution}</span></div></div><div className="tag-list">{project.stack.map(tech=><span key={tech}>{tech}</span>)}</div><div className="feature-links">{"live" in project && project.live && <a href={project.live} target="_blank" rel="noreferrer">Visit website ↗</a>}<a href={project.github} target="_blank" rel="noreferrer">View source code ↗</a></div></div>
