@@ -34,7 +34,7 @@ const projects = [
     github: "https://github.com/abdelkhalekligflam/Atelier",
     live: "https://atelier-delta-five.vercel.app/",
     image: null,
-    video: null,
+    video: "/atelier-demo.mp4",
     challenge: "Managing workshop stock, repairs and sales.",
     solution: "A central management workspace with offline workflows.",
   }
