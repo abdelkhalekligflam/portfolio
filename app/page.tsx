@@ -121,7 +121,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section id="top" className="relative mx-auto flex min-h-[86vh] max-w-6xl items-center px-6 py-24">
+      <section id="top" className="relative mx-auto flex min-h-[75vh] max-w-6xl items-center px-6 py-24">
         <div className="max-w-4xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-400/20 bg-indigo-500/10 px-3 py-1.5 text-xs font-medium text-indigo-300">
             <span className="h-1.5 w-1.5 rounded-full bg-indigo-400" />
@@ -130,7 +130,7 @@ export default function Home() {
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-zinc-500">
             Front-End Developer
           </p>
-          <h1 className="max-w-4xl text-5xl font-semibold leading-[0.98] tracking-[-0.04em] text-white sm:text-6xl md:text-8xl">
+          <h1 className="max-w-4xl text-5xl font-semibold leading-[0.98] tracking-[-0.065em] text-white sm:text-6xl md:text-8xl">
             Abdelkhalek
             <span className="block bg-gradient-to-r from-white via-zinc-300 to-indigo-400 bg-clip-text text-transparent">
               Ligflam.
@@ -208,13 +208,13 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="project-preview flex min-w-0 items-center justify-center border-t border-white/10 p-5 sm:p-7 lg:border-l lg:border-t-0">
-                  <div className="project-browser w-full overflow-hidden rounded-xl border border-white/10 shadow-2xl">
+                <div className="project-preview flex min-w-0 items-center justify-center border-t border-white/10 p-3 sm:p-5 lg:border-l lg:border-t-0">
+                  <div className="project-browser w-full overflow-hidden rounded-xl border border-white/10 shadow-2xl ring-1 ring-indigo-500/10">
                     <div className="browser-toolbar flex h-9 items-center gap-1.5 border-b border-white/10 px-4">
                       <span className="h-2 w-2 rounded-full bg-[#fb7185]/70" /><span className="h-2 w-2 rounded-full bg-[#fbbf24]/70" /><span className="h-2 w-2 rounded-full bg-[#34d399]/70" />
                       <span className="ml-auto text-[10px] font-medium tracking-wider opacity-60">LIVE PREVIEW</span>
                     </div>
-                    {project.video ? <video className="block h-auto w-full bg-zinc-950" autoPlay muted loop playsInline preload="metadata" poster={project.image ?? undefined} aria-label={`${project.name} application demo`}><source src={project.video} type="video/mp4" /></video> : project.image ? <div className="relative aspect-video"><Image src={project.image} alt={`${project.name} dashboard`} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-top" /></div> : <div className="aspect-video bg-zinc-900" />}
+                    {project.video ? <video className="block aspect-[960/472] w-full bg-zinc-950 object-contain" autoPlay muted loop playsInline controls preload="auto" poster={project.image ?? undefined} aria-label={`${project.name} application demo`}><source src={project.video} type="video/mp4" /></video> : project.image ? <div className="relative aspect-video"><Image src={project.image} alt={`${project.name} dashboard`} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-top" /></div> : <div className="aspect-video bg-zinc-900" />}
                   </div>
                 </div>
               </div>
