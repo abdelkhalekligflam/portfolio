@@ -23,6 +23,105 @@ const projects = [
   },
 ];
 
+const additionalProjects = [
+  {
+    name: "Atelier",
+    type: "Inventory & Repairs SaaS",
+    description: "Stock, repairs, sales and arrivals management with offline-first workflows.",
+    category: "SaaS",
+    live: "https://atelier-delta-five.vercel.app/",
+    github: "https://github.com/abdelkhalekligflam/Atelier"
+  },
+  {
+    name: "DataPath",
+    type: "Data Analytics Learning",
+    description: "Self-paced data analyst learning platform with progress tracking and bilingual lessons.",
+    category: "Education",
+    live: "https://datapath-ten.vercel.app/",
+    github: "https://github.com/abdelkhalekligflam/datapath"
+  },
+  {
+    name: "IGGOULFANE",
+    type: "Honey Cooperative",
+    description: "Bilingual storefront for a natural honey cooperative in Ouarzazate.",
+    category: "E-commerce",
+    live: "https://iggoulfane.vercel.app/",
+    github: "https://github.com/abdelkhalekligflam/iggoulfane"
+  },
+  {
+    name: "ATAR",
+    type: "World History Timeline",
+    description: "An interactive educational timeline exploring major events in world history.",
+    category: "Education",
+    live: null,
+    github: "https://github.com/abdelkhalekligflam/ATAR"
+  },
+  {
+    name: "PE-Design Store",
+    type: "Digital Products Store",
+    description: "A digital product storefront with customer email collection and purchase flow.",
+    category: "E-commerce",
+    live: null,
+    github: "https://github.com/abdelkhalekligflam/pe-design-store"
+  },
+  {
+    name: "Khedmti",
+    type: "Web Application",
+    description: "An independently developed web application.",
+    category: "Web App",
+    live: "https://khedmti-beryl.vercel.app/",
+    github: "https://github.com/abdelkhalekligflam/khedmti"
+  },
+  {
+    name: "Lissan",
+    type: "Web Application",
+    description: "A modern web application project.",
+    category: "Web App",
+    live: null,
+    github: "https://github.com/abdelkhalekligflam/lissan"
+  },
+  {
+    name: "CapConcours",
+    type: "Concours Preparation",
+    description: "A platform for preparing for Moroccan competitive recruitment examinations.",
+    category: "Education",
+    live: "https://cap-concours.vercel.app/",
+    github: "https://github.com/abdelkhalekligflam/CapConcours"
+  },
+  {
+    name: "Mizan",
+    type: "Web Application",
+    description: "A modern web application project.",
+    category: "Web App",
+    live: null,
+    github: "https://github.com/abdelkhalekligflam/Mizan"
+  },
+  {
+    name: "72H — BE READY",
+    type: "Digital Product",
+    description: "An emergency preparedness digital guide and storefront project.",
+    category: "Digital Product",
+    live: "https://akhaelk.gumroad.com/l/72h-be-ready",
+    github: "https://github.com/abdelkhalekligflam/72h-be-ready"
+  },
+  {
+    name: "Floww",
+    type: "Fintech UI",
+    description: "A modern front-end fintech application scaffold.",
+    category: "Finance",
+    live: null,
+    github: "https://github.com/abdelkhalekligflam/floww"
+  },
+  {
+    name: "Portfolio",
+    type: "Developer Portfolio",
+    description: "This responsive portfolio showcasing my projects, experience and skills.",
+    category: "Portfolio",
+    live: "https://portfolio-one-self-87.vercel.app/",
+    github: "https://github.com/abdelkhalekligflam/portfolio"
+  }
+];
+
 const skills = [
   "HTML",
   "CSS",
@@ -51,6 +150,7 @@ export default function Home() {
           </a>
           <div className="hidden items-center gap-7 text-sm text-zinc-400 md:flex">
             <a className="transition hover:text-white" href="#projects">Projects</a>
+            <a className="transition hover:text-white" href="#all-projects">All Projects</a>
             <a className="transition hover:text-white" href="#skills">Skills</a>
             <a className="transition hover:text-white" href="#about">About</a>
             <a className="transition hover:text-white" href="#experience">Experience</a>
@@ -67,6 +167,7 @@ export default function Home() {
         </nav>
         <div className="mx-auto flex max-w-6xl gap-5 overflow-x-auto px-6 pb-3 text-xs text-zinc-500 md:hidden">
           <a href="#projects">Projects</a>
+          <a href="#all-projects">All Projects</a>
           <a href="#skills">Skills</a>
           <a href="#about">About</a>
           <a href="#experience">Experience</a>
@@ -214,6 +315,29 @@ export default function Home() {
                     </div>
                   )}
                 </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+
+      <section id="all-projects" className="relative mx-auto max-w-6xl scroll-mt-28 px-6 pb-28">
+        <div className="mb-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">More work</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">All projects</h2>
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-500">A growing collection of SaaS, educational platforms, commerce experiences, and front-end experiments.</p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {additionalProjects.map((project) => (
+            <article key={project.name} className="group flex min-h-64 flex-col rounded-3xl border border-white/10 bg-white/[0.035] p-6 transition hover:-translate-y-1 hover:border-indigo-400/30 hover:bg-white/[0.06]">
+              <span className="w-fit rounded-full border border-indigo-400/20 bg-indigo-500/10 px-3 py-1 text-xs text-indigo-300">{project.category}</span>
+              <h3 className="mt-5 text-2xl font-semibold text-white">{project.name}</h3>
+              <p className="mt-1 text-xs text-zinc-500">{project.type}</p>
+              <p className="mt-4 flex-1 text-sm leading-6 text-zinc-400">{project.description}</p>
+              <div className="mt-6 flex flex-wrap gap-4 text-sm font-medium">
+                {project.live && <a href={project.live} target="_blank" rel="noreferrer" className="text-indigo-300 hover:text-white">Live demo ↗</a>}
+                <a href={project.github} target="_blank" rel="noreferrer" className="text-zinc-300 hover:text-white">GitHub ↗</a>
               </div>
             </article>
           ))}
