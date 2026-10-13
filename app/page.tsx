@@ -10,6 +10,8 @@ const projects = [
     github: "https://github.com/abdelkhalekligflam/Rasid",
     image: "/rasid-dashboard.png.jpg",
     video: "/rasid-demo.mp4",
+    challenge: "Simplifying personal finance tracking.",
+    solution: "One dashboard for transactions, budgets and savings goals.",
   },
   {
     name: "Taskora",
@@ -20,6 +22,8 @@ const projects = [
     github: "https://github.com/abdelkhalekligflam/Taskora",
     image: null,
     video: "/taskora-demo-optimized.mp4",
+    challenge: "Organizing daily work and long-term goals.",
+    solution: "A responsive productivity interface with reusable components.",
   },
   {
     name: "Atelier",
@@ -30,6 +34,8 @@ const projects = [
     live: "https://atelier-delta-five.vercel.app/",
     image: null,
     video: null,
+    challenge: "Managing workshop stock, repairs and sales.",
+    solution: "A central management workspace with offline workflows.",
   }
 ];
 
@@ -117,7 +123,7 @@ export default function Home() {
         <div className="max-w-4xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-400/20 bg-indigo-500/10 px-3 py-1.5 text-xs font-medium text-indigo-300">
             <span className="h-1.5 w-1.5 rounded-full bg-indigo-400" />
-            Open to front-end opportunities
+            Open to front-end and remote opportunities
           </div>
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-zinc-500">
             Front-End Developer
@@ -137,7 +143,7 @@ export default function Home() {
               href="#projects"
               className="rounded-full bg-indigo-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-indigo-400"
             >
-              View my work
+              Explore projects
             </a>
             <a
               href="mailto:akhaelk@gmail.com"
@@ -184,6 +190,7 @@ export default function Home() {
                     </div>
                     <h3 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">{project.name}</h3>
                     <p className="mt-5 max-w-xl text-base leading-7 text-zinc-400">{project.description}</p>
+                    <div className="mt-6 grid gap-3 text-sm sm:grid-cols-2"><div className="rounded-xl border border-white/10 bg-black/20 p-4"><p className="font-semibold text-indigo-300">Challenge</p><p className="mt-2 text-zinc-400">{project.challenge}</p></div><div className="rounded-xl border border-white/10 bg-black/20 p-4"><p className="font-semibold text-indigo-300">Solution</p><p className="mt-2 text-zinc-400">{project.solution}</p></div></div>
                   </div>
                   <div>
                     <div className="mt-8 flex flex-wrap gap-2">
@@ -209,7 +216,7 @@ export default function Home() {
                   {project.video ? (
                     <div className="absolute inset-4 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-2xl sm:inset-5">
                       <video
-                        className="h-full w-full object-cover object-left-top motion-reduce:hidden"
+                        className="h-full w-full object-cover object-left-top "
                         autoPlay
                         muted
                         loop
@@ -289,8 +296,8 @@ export default function Home() {
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">Tools I work with</h2>
           <div className="mt-8 flex flex-wrap gap-3">
             {skills.map((skill) => (
-              <span key={skill} className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-zinc-300">
-                {skill}
+              <span key={skill} className="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-zinc-300 transition hover:border-indigo-400/40">
+                <span aria-hidden="true" className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-500/10 font-semibold text-indigo-300">{skill.slice(0,2).toUpperCase()}</span>{skill}
               </span>
             ))}
           </div>
@@ -319,7 +326,7 @@ export default function Home() {
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">Experience</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">Professional journey</h2>
         </div>
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-5 border-l border-indigo-400/30 pl-5 md:grid-cols-2">
           <article className="rounded-3xl border border-white/10 bg-white/[0.03] p-7">
             <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">03/2026 — 06/2026</p>
             <h3 className="mt-5 text-xl font-semibold text-white">Front-End Developer Intern</h3>
