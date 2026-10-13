@@ -60,3 +60,31 @@ html[data-theme="light"] .portfolio-shell a.bg-white { background:#171827;color:
 html[data-theme="light"] .portfolio-shell a.bg-indigo-500 { color:#fff; }
 html[data-theme="light"] .theme-switch { background:#fff;border-color:#dce1ea;color:#25263b; }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;}}
+
+/* Light surfaces override hard-coded dark utility classes in the portfolio. */
+html[data-theme="light"] .portfolio-shell { background:#f7f8fc!important; }
+html[data-theme="light"] .portfolio-shell .portfolio-header { background:rgba(255,255,255,.9)!important; }
+html[data-theme="light"] .portfolio-shell .featured-card { background:#fff!important;border-color:#dce2ef!important;box-shadow:0 20px 65px rgba(30,41,59,.08); }
+html[data-theme="light"] .portfolio-shell .project-detail { background:#f5f7fc!important; }
+html[data-theme="light"] .portfolio-shell .project-preview { background:linear-gradient(145deg,#e9eefe,#f5f7fc)!important; }
+html[data-theme="light"] .portfolio-shell .project-browser { background:#101014!important; }
+html[data-theme="light"] .portfolio-shell .browser-toolbar { background:#1b1b21!important; }
+html[data-theme="light"] .portfolio-shell section > .rounded-3xl,
+html[data-theme="light"] .portfolio-shell section > .rounded-\[2rem\] { background:#fff!important; }
+html[data-theme="light"] .portfolio-shell .text-zinc-400 { color:#525b6b!important; }
+html[data-theme="light"] .portfolio-shell .text-zinc-500 { color:#697386!important; }
+html[data-theme="light"] .portfolio-shell .text-white { color:#171827!important; }
+html[data-theme="light"] .portfolio-shell .text-indigo-300 { color:#4f46e5!important; }
+html[data-theme="light"] .portfolio-shell .featured-card .project-browser .text-white { color:#fff!important; }
+html[data-theme="light"] .portfolio-shell a.bg-indigo-500,
+html[data-theme="light"] .portfolio-shell a.bg-white { color:#fff!important; }
+html[data-theme="light"] .portfolio-shell .bg-black\/20 { background:#f2f4f9!important; }
+html[data-theme="light"] .portfolio-shell .border-white\/10 { border-color:#dfe3ed!important; }
+html[data-theme="light"] .portfolio-shell .border-white\/5 { border-color:#e5e8f0!important; }
+html[data-theme="light"] .portfolio-shell .bg-white\/5 { background:#eef1f8!important; }
+html[data-theme="light"] .portfolio-shell .bg-white\/\[0\.03\],
+html[data-theme="light"] .portfolio-shell .bg-white\/\[0\.035\] { background:#fff!important; }
+html[data-theme="light"] .portfolio-shell .bg-gradient-to-br { background:#fff!important; }
+html[data-theme="light"] .portfolio-shell .project-browser video { background:#111!important; }
+.portfolio-shell .featured-card { transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease; }
+.portfolio-shell .featured-card:hover { box-shadow:0 24px 70px rgba(67,56,202,.12); }
