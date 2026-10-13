@@ -214,7 +214,7 @@ export default function Home() {
                       <span className="h-2 w-2 rounded-full bg-[#fb7185]/70" /><span className="h-2 w-2 rounded-full bg-[#fbbf24]/70" /><span className="h-2 w-2 rounded-full bg-[#34d399]/70" />
                       <span className="ml-auto text-[10px] font-medium tracking-wider opacity-60">LIVE PREVIEW</span>
                     </div>
-                    {project.video ? <video className="block aspect-video w-full bg-zinc-950 object-cover object-top" autoPlay muted loop playsInline preload="metadata" poster={project.image ?? undefined} aria-label={`${project.name} application demo`}><source src={project.video} type="video/mp4" /></video> : project.image ? <div className="relative aspect-video"><Image src={project.image} alt={`${project.name} dashboard`} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-top" /></div> : <div className="aspect-video bg-zinc-900" />}
+                    {project.video ? <video className="block h-auto w-full bg-zinc-950" autoPlay muted loop playsInline preload="metadata" poster={project.image ?? undefined} aria-label={`${project.name} application demo`}><source src={project.video} type="video/mp4" /></video> : project.image ? <div className="relative aspect-video"><Image src={project.image} alt={`${project.name} dashboard`} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-top" /></div> : <div className="aspect-video bg-zinc-900" />}
                   </div>
                 </div>
               </div>
