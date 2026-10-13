@@ -20,105 +20,43 @@ const projects = [
     github: "https://github.com/abdelkhalekligflam/Taskora",
     image: null,
     video: "/taskora-demo-optimized.mp4",
-  },
+  },,
+  {
+    name: "Atelier",
+    type: "Inventory & Repairs SaaS",
+    description: "A business management platform for inventory, repairs, sales and arrivals, including offline-first workflows.",
+    stack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
+    github: "https://github.com/abdelkhalekligflam/Atelier",
+    live: "https://atelier-delta-five.vercel.app/",
+    image: null,
+    video: null,
+  }
 ];
 
 const additionalProjects = [
   {
-    name: "Atelier",
-    type: "Inventory & Repairs SaaS",
-    description: "Stock, repairs, sales and arrivals management with offline-first workflows.",
-    category: "SaaS",
-    live: "https://atelier-delta-five.vercel.app/",
-    github: "https://github.com/abdelkhalekligflam/Atelier"
+    "name": "DataPath",
+    "type": "Data Analytics Learning",
+    "description": "Self-paced data analyst learning platform with progress tracking and bilingual lessons.",
+    "category": "Education",
+    "live": "https://datapath-ten.vercel.app/",
+    "github": "https://github.com/abdelkhalekligflam/datapath"
   },
   {
-    name: "DataPath",
-    type: "Data Analytics Learning",
-    description: "Self-paced data analyst learning platform with progress tracking and bilingual lessons.",
-    category: "Education",
-    live: "https://datapath-ten.vercel.app/",
-    github: "https://github.com/abdelkhalekligflam/datapath"
+    "name": "ATAR",
+    "type": "World History Timeline",
+    "description": "An educational timeline exploring major events in world history.",
+    "category": "Education",
+    "live": null,
+    "github": "https://github.com/abdelkhalekligflam/ATAR"
   },
   {
-    name: "IGGOULFANE",
-    type: "Honey Cooperative",
-    description: "Bilingual storefront for a natural honey cooperative in Ouarzazate.",
-    category: "E-commerce",
-    live: "https://iggoulfane.vercel.app/",
-    github: "https://github.com/abdelkhalekligflam/iggoulfane"
-  },
-  {
-    name: "ATAR",
-    type: "World History Timeline",
-    description: "An interactive educational timeline exploring major events in world history.",
-    category: "Education",
-    live: null,
-    github: "https://github.com/abdelkhalekligflam/ATAR"
-  },
-  {
-    name: "PE-Design Store",
-    type: "Digital Products Store",
-    description: "A digital product storefront with customer email collection and purchase flow.",
-    category: "E-commerce",
-    live: null,
-    github: "https://github.com/abdelkhalekligflam/pe-design-store"
-  },
-  {
-    name: "Khedmti",
-    type: "Web Application",
-    description: "An independently developed web application.",
-    category: "Web App",
-    live: "https://khedmti-beryl.vercel.app/",
-    github: "https://github.com/abdelkhalekligflam/khedmti"
-  },
-  {
-    name: "Lissan",
-    type: "Web Application",
-    description: "A modern web application project.",
-    category: "Web App",
-    live: null,
-    github: "https://github.com/abdelkhalekligflam/lissan"
-  },
-  {
-    name: "CapConcours",
-    type: "Concours Preparation",
-    description: "A platform for preparing for Moroccan competitive recruitment examinations.",
-    category: "Education",
-    live: "https://cap-concours.vercel.app/",
-    github: "https://github.com/abdelkhalekligflam/CapConcours"
-  },
-  {
-    name: "Mizan",
-    type: "Web Application",
-    description: "A modern web application project.",
-    category: "Web App",
-    live: null,
-    github: "https://github.com/abdelkhalekligflam/Mizan"
-  },
-  {
-    name: "72H — BE READY",
-    type: "Digital Product",
-    description: "An emergency preparedness digital guide and storefront project.",
-    category: "Digital Product",
-    live: "https://akhaelk.gumroad.com/l/72h-be-ready",
-    github: "https://github.com/abdelkhalekligflam/72h-be-ready"
-  },
-  {
-    name: "Floww",
-    type: "Fintech UI",
-    description: "A modern front-end fintech application scaffold.",
-    category: "Finance",
-    live: null,
-    github: "https://github.com/abdelkhalekligflam/floww"
-  },
-  {
-    name: "Portfolio",
-    type: "Developer Portfolio",
-    description: "This responsive portfolio showcasing my projects, experience and skills.",
-    category: "Portfolio",
-    live: "https://portfolio-one-self-87.vercel.app/",
-    github: "https://github.com/abdelkhalekligflam/portfolio"
+    "name": "IGGOULFANE",
+    "type": "Honey Cooperative",
+    "description": "An Arabic-first storefront for a natural honey cooperative in Ouarzazate.",
+    "category": "E-commerce",
+    "live": "https://iggoulfane.vercel.app/",
+    "github": "https://github.com/abdelkhalekligflam/iggoulfane"
   }
 ];
 
@@ -255,6 +193,7 @@ export default function Home() {
                         </span>
                       ))}
                     </div>
+                    {"live" in project && project.live && <a href={project.live} target="_blank" rel="noreferrer" className="mt-6 mr-5 inline-flex text-sm font-semibold text-indigo-300 hover:text-white">Live demo ↗</a>}
                     <a
                       href={project.github}
                       target="_blank"
@@ -326,7 +265,7 @@ export default function Home() {
         <div className="mb-10">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-400">More work</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">All projects</h2>
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-500">A growing collection of SaaS, educational platforms, commerce experiences, and front-end experiments.</p>
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-500">Selected additional work across education and e-commerce.</p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {additionalProjects.map((project) => (
