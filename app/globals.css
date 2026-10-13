@@ -11,3 +11,11 @@ html[data-theme="light"]{color-scheme:light;--background:#fafaf8;--foreground:#2
 @media(max-width:760px){.layout,.nav-shell{padding-left:20px;padding-right:20px}.nav-shell{min-height:68px}.nav-links{display:none}.wordmark{font-size:12px}.brand-muted{display:none}.nav-cta{padding:0 11px}.hero{display:flex;flex-direction:column;align-items:stretch;min-height:0}.hero-copy{padding:75px 0 25px}.hero h1{font-size:clamp(46px,10vw,76px)}.hero-description{font-size:15px}.hero-foot{margin-top:55px}.hero-art{height:230px;margin-bottom:35px}.orb-one{width:180px;height:180px}.orb-two{width:110px;height:110px}.section{padding:75px 0}.section-heading{display:block}.section-intro{margin-top:18px}.feature-card{grid-template-columns:1fr}.feature-media{padding:14px}.feature-content{padding:25px}.feature-insight{grid-template-columns:1fr 1fr}.more-grid{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;gap:12px}.timeline-row{grid-template-columns:1fr 24px;gap:8px}.timeline-date{grid-column:1/-1}.education-grid{grid-template-columns:1fr}.contact-section{padding:80px 0}.contact-section h2{font-size:clamp(56px,12vw,90px)}}
 @media(max-width:420px){.nav-cta{font-size:11px}.wordmark{gap:7px}.nav-actions{gap:6px}.feature-insight{grid-template-columns:1fr}.eyebrow{font-size:9px}.hero-foot{gap:10px}.hero-foot span{font-size:8px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Accessibility and video finishing */
+.skip-link{position:fixed;left:16px;top:-80px;z-index:100;background:var(--foreground);color:var(--background);padding:12px 18px;border-radius:9px;font-weight:700}
+.skip-link:focus{top:12px}
+:where(a,button):focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.feature-video{aspect-ratio:auto;max-height:360px;object-fit:contain}
+.browser{isolation:isolate}
+@media(max-width:760px){.feature-video{max-height:none}.browser-top{font-size:9px}.hero-actions .button-primary,.hero-actions .button-secondary{min-height:45px}}
