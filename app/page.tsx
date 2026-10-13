@@ -1,5 +1,6 @@
 import Image from "next/image";
 import CopyEmail from "./components/copy-email";
+import ThemeToggle from "./components/theme-toggle";
 
 const projects = [
   {
@@ -85,10 +86,10 @@ const skills = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#09090b] text-zinc-100">
+    <main className="portfolio-shell min-h-screen overflow-hidden bg-[#09090b] text-zinc-100">
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(99,102,241,0.16),transparent_30%),radial-gradient(circle_at_80%_25%,rgba(59,130,246,0.10),transparent_28%)]" />
 
-      <header className="sticky top-0 z-50 scroll-smooth border-b border-white/5 bg-[#09090b]/80 backdrop-blur-xl">
+      <header className="portfolio-header sticky top-0 z-50 scroll-smooth border-b border-white/5 bg-[#09090b]/80 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="#top" className="text-sm font-semibold tracking-[0.22em] text-white">
             AKL
@@ -101,14 +102,14 @@ export default function Home() {
             <a className="transition hover:text-white" href="#experience">Experience</a>
             <a className="transition hover:text-white" href="#contact">Contact</a>
           </div>
-          <a
+          <div className="flex items-center gap-2"><ThemeToggle /><a
             href="https://github.com/abdelkhalekligflam"
             target="_blank"
             rel="noreferrer"
             className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-zinc-200 transition hover:border-indigo-400/40 hover:bg-indigo-500/10 hover:text-white"
           >
             GitHub
-          </a>
+          </a></div>
         </nav>
         <div className="mx-auto flex max-w-6xl gap-5 overflow-x-auto px-6 pb-3 text-xs text-zinc-500 md:hidden">
           <a href="#projects">Projects</a>
@@ -174,93 +175,47 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid gap-6">
+        <div className="grid gap-7">
           {projects.map((project, index) => (
-            <article
-              key={project.name}
-              className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] transition hover:border-indigo-400/30 hover:bg-white/[0.05]"
-            >
-              <div className="grid min-h-[360px] lg:grid-cols-[1.1fr_0.9fr]">
-                <div className="flex flex-col justify-between p-7 md:p-10">
+            <article key={project.name} className="featured-card group overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.035] transition duration-300 hover:-translate-y-1 hover:border-indigo-400/30">
+              <div className="grid items-stretch lg:grid-cols-2">
+                <div className="flex min-w-0 flex-col justify-between gap-7 p-6 sm:p-9 lg:p-10">
                   <div>
-                    <div className="mb-8 flex items-center justify-between">
-                      <span className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
-                        0{index + 1} / {project.type}
-                      </span>
-                      <span className="text-zinc-600 transition group-hover:text-indigo-400">↗</span>
+                    <div className="mb-6 flex items-center justify-between">
+                      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">0{index + 1} / {project.type}</span>
+                      <span aria-hidden="true" className="text-indigo-400">↗</span>
                     </div>
-                    <h3 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">{project.name}</h3>
-                    <p className="mt-5 max-w-xl text-base leading-7 text-zinc-400">{project.description}</p>
-                    <div className="mt-6 grid gap-3 text-sm sm:grid-cols-2"><div className="rounded-xl border border-white/10 bg-black/20 p-4"><p className="font-semibold text-indigo-300">Challenge</p><p className="mt-2 text-zinc-400">{project.challenge}</p></div><div className="rounded-xl border border-white/10 bg-black/20 p-4"><p className="font-semibold text-indigo-300">Solution</p><p className="mt-2 text-zinc-400">{project.solution}</p></div></div>
+                    <h3 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">{project.name}</h3>
+                    <p className="mt-4 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base">{project.description}</p>
+                    <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                      <div className="project-detail rounded-2xl border border-white/10 bg-black/20 p-4">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-indigo-300">Challenge</p>
+                        <p className="mt-2 text-sm leading-6 text-zinc-400">{project.challenge}</p>
+                      </div>
+                      <div className="project-detail rounded-2xl border border-white/10 bg-black/20 p-4">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-indigo-300">Solution</p>
+                        <p className="mt-2 text-sm leading-6 text-zinc-400">{project.solution}</p>
+                      </div>
+                    </div>
                   </div>
                   <div>
-                    <div className="mt-8 flex flex-wrap gap-2">
-                      {project.stack.map((item) => (
-                        <span key={item} className="rounded-full border border-white/10 bg-black/20 px-3 py-1.5 text-xs text-zinc-400">
-                          {item}
-                        </span>
-                      ))}
+                    <div className="flex flex-wrap gap-2">
+                      {project.stack.map((item) => <span key={item} className="rounded-full border border-white/10 px-3 py-1 text-[11px] text-zinc-400">{item}</span>)}
                     </div>
-                    {"live" in project && project.live && <a href={project.live} target="_blank" rel="noreferrer" className="mt-6 mr-5 inline-flex text-sm font-semibold text-indigo-300 hover:text-white">Live demo ↗</a>}
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-indigo-300"
-                    >
-                      View GitHub repository <span aria-hidden>↗</span>
-                    </a>
+                    <div className="mt-6 flex flex-wrap items-center gap-5">
+                      {"live" in project && project.live && <a href={project.live} target="_blank" rel="noreferrer" className="text-sm font-semibold text-indigo-300 hover:underline">Live demo ↗</a>}
+                      <a href={project.github} target="_blank" rel="noreferrer" className="text-sm font-semibold text-white hover:underline">Source code ↗</a>
+                    </div>
                   </div>
                 </div>
-
-                <div className="relative flex min-h-[240px] items-center overflow-hidden border-t border-white/10 bg-[#0d0d12] p-4 sm:p-5 lg:border-l lg:border-t-0">
-                  {project.video ? (
-                    <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-2xl">
-                      <video
-                        className="block h-auto w-full"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="metadata"
-                        poster={project.image ?? undefined}
-                        aria-label={`${project.name} application demo`}
-                      >
-                        <source src={project.video} type="video/mp4" />
-                      </video>
-                      <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/5" />
+                <div className="project-preview flex min-w-0 items-center justify-center border-t border-white/10 p-5 sm:p-7 lg:border-l lg:border-t-0">
+                  <div className="project-browser w-full overflow-hidden rounded-xl border border-white/10 shadow-2xl">
+                    <div className="browser-toolbar flex h-9 items-center gap-1.5 border-b border-white/10 px-4">
+                      <span className="h-2 w-2 rounded-full bg-[#fb7185]/70" /><span className="h-2 w-2 rounded-full bg-[#fbbf24]/70" /><span className="h-2 w-2 rounded-full bg-[#34d399]/70" />
+                      <span className="ml-auto text-[10px] font-medium tracking-wider opacity-60">LIVE PREVIEW</span>
                     </div>
-                  ) : project.image ? (
-                    <div className="absolute inset-5 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-2xl">
-                      <Image
-                        src={project.image}
-                        alt={`${project.name} application dashboard`}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 45vw"
-                        className="object-cover object-left-top transition duration-700 group-hover:scale-[1.025]"
-                      />
-                      <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/5" />
-                    </div>
-                  ) : (
-                    <div className="absolute inset-5 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-indigo-500/15 via-zinc-900 to-black p-5 shadow-2xl">
-                      <div className="mb-5 flex items-center gap-1.5">
-                        <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
-                      </div>
-                      <div className="grid h-[calc(100%-28px)] grid-cols-[72px_1fr] gap-4">
-                        <div className="rounded-xl border border-white/5 bg-white/[0.03]" />
-                        <div className="grid grid-rows-[1fr_1.25fr] gap-4">
-                          <div className="grid grid-cols-3 gap-3">
-                            <div className="rounded-xl border border-white/5 bg-white/[0.04]" />
-                            <div className="rounded-xl border border-indigo-400/10 bg-indigo-500/[0.08]" />
-                            <div className="rounded-xl border border-white/5 bg-white/[0.04]" />
-                          </div>
-                          <div className="rounded-xl border border-white/5 bg-[linear-gradient(180deg,rgba(99,102,241,0.08),rgba(255,255,255,0.02))]" />
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                    {project.video ? <video className="block aspect-video w-full bg-zinc-950 object-cover object-top" autoPlay muted loop playsInline preload="metadata" poster={project.image ?? undefined} aria-label={`${project.name} application demo`}><source src={project.video} type="video/mp4" /></video> : project.image ? <div className="relative aspect-video"><Image src={project.image} alt={`${project.name} dashboard`} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-top" /></div> : <div className="aspect-video bg-zinc-900" />}
+                  </div>
                 </div>
               </div>
             </article>
